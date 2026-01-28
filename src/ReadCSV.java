@@ -9,6 +9,7 @@ public class ReadCSV {
     public static int maxID = 0;
     public static String maxGender = "";
     public static String maxCountry = "";
+    public static int maxAge;
     ReadCSV(String filename){
         this.filename = filename;
         this.map = data_CSV();
@@ -33,6 +34,8 @@ public class ReadCSV {
                     map.put(values[0], screentimeInfo);
                 
                     maxID = Math.max(maxID, Integer.parseInt(values[0]));
+                    maxCountry = values[3];
+                    
 
                 }
                 

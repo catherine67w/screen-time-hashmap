@@ -1,29 +1,76 @@
 import java.util.HashMap;
-import java.util.Scanner;
 import java.util.Map;
 
 public class App {
-    // create a hashmap to store platform popularity
-    private static HashMap<String, Integer> platformPopularity = new HashMap<>();
 
     public static void main(String[] args) {
+
         ReadCSV reader = new ReadCSV("StudentsSocialMediaAddiction.csv");
         HashMap<String, ScreentimeDataInfo> dataMap = reader.data_CSV();
-        ScreentimeDataInfo maxPerson = dataMap.get(1);
 
-        for (int i = 0; i < ReadCSV.maxID; i++){
-            ScreentimeDataInfo person = dataMap.get(String.valueOf(i));
-            if (person != null) {
-                if (person.num_hours_screen > maxPerson.num_hours_screen){
-                    maxPerson = dataMap.get(String.valueOf(i));
-                }
+        // HashMaps to track max screen time by category
+        HashMap<Integer, ScreentimeDataInfo> maxByAge = new HashMap<>();
+        HashMap<String, ScreentimeDataInfo> maxByCountry = new HashMap<>();
+        HashMap<String, ScreentimeDataInfo> maxByGender = new HashMap<>();
+
+        for (ScreentimeDataInfo person : dataMap.values()) {
+
+            double screenTime = person.getScreenTime();
+
+            // ---- AGE ----
+            int age = person.getAge();
+            if (!maxByAge.containsKey(age) ||
+                screenTime > maxByAge.get(age).getScreenTime()) {
+                maxByAge.put(age, person);
+            }
+
+            // ---- COUNTRY ----
+            String country = person.getCountry();
+            if (!maxByCountry.containsKey(country) ||
+                screenTime > maxByCountry.get(country).getScreenTime()) {
+                maxByCountry.put(country, person);
+            }
+
+            // ---- GENDER ----
+            String gender = person.getGender();
+            if (!maxByGender.containsKey(gender) ||
+                screenTime > maxByGender.get(gender).getScreenTime()) {
+                maxByGender.put(gender, person);
             }
         }
-        System.out.println("Screen time data for person:");
-        System.out.println("Screen Time: " + String.valueOf(maxPerson.getScreenTime()));
-        System.out.println("Gender: " + maxPerson.getGender());
-        System.out.println("Age: " + String.valueOf(maxPerson.getAge()));
-        System.out.println("Country: " + maxPerson.getCountry());
-        System.out.println("No data found for person.");
-   }
+
+        // ---- PRINT RESULTS ----
+        System.out.println("Highest Screen Time by Age:");
+        for (Map.Entry<Integer, ScreentimeDataInfo> entry : maxByAge.entrySet()) {
+            ScreentimeDataInfo p = entry.getValue();
+            System.out.println(
+                "Age: " + entry.getKey() +
+                " | Screen Time: " + p.getScreenTime() +
+                " | Gender: " + p.getGender() +
+                " | Country: " + p.getCountry()
+            );
+        }
+
+        System.out.println("\nHighest Screen Time by Country:");
+        for (Map.Entry<String, ScreentimeDataInfo> entry : maxByCountry.entrySet()) {
+            ScreentimeDataInfo p = entry.getValue();
+            System.out.println(
+                "Country: " + entry.getKey() +
+                " | Screen Time: " + p.getScreenTime() +
+                " | Age: " + p.getAge() +
+                " | Gender: " + p.getGender()
+            );
+        }
+
+        System.out.println("\nHighest Screen Time by Gender:");
+        for (Map.Entry<String, ScreentimeDataInfo> entry : maxByGender.entrySet()) {
+            ScreentimeDataInfo p = entry.getValue();
+            System.out.println(
+                "Gender: " + entry.getKey() +
+                " | Screen Time: " + p.getScreenTime() +
+                " | Age: " + p.getAge() +
+                " | Country: " + p.getCountry()
+            );
+        }
+    }
 }

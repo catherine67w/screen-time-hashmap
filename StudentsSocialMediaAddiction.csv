@@ -1,0 +1,100 @@
+Student_ID,Age,Gender,Country,Avg_Daily_Usage_Hours,a,b
+1,19,Female,Bangladesh,5.2,6.5,6
+2,22,Male,India,2.1,Twitter,7.5,8
+3,20,Female,USA,6.0,5.0,5
+4,18,Male,UK,3.0
+5,21,Male,Canada,4.5
+6,19,Female,Australia,7.2,4.5,4,5,9
+7,23,Male,Germany,1.5,8.0,9,0,2
+8,20,Female,Brazil,5.8,6.0,6,2,8
+9,18,Male,Japan,4.0,6.5,7,1,5
+10,21,Female,South Korea,3.3,7.0,7,1,4
+11,19,Male,France,4.8,6.2,5,3,7
+12,20,Female,Spain,5.5,5.8,6,2,8
+13,22,Male,Italy,2.8,7.2,8,1,4
+14,18,Female,Mexico,6.5,5.5,5,4,9
+15,21,Male,Russia,3.7,6.8,7,2,5
+16,20,Female,China,4.2,6.0,6,3,7
+17,24,Male,Sweden,2.0,7.8,8,0,3
+18,19,Female,Norway,5.0,5.7,5,3,8
+19,21,Male,Denmark,3.5,6.7,7,1,5
+20,20,Female,Netherlands,4.7,5.9,6,3,7
+21,18,Male,Belgium,5.3,5.5,5,4,8
+22,23,Female,Switzerland,2.5,7.3,8,1,4
+23,19,Male,Austria,4.9,5.8,6,3,7
+24,20,Female,Portugal,5.7,5.4,5,4,8
+25,22,Male,Greece,3.2,6.9,7,2,5
+26,19,Female,Ireland,6.1,5.2,5,4,9
+27,21,Male,New Zealand,3.8,6.6,7,1,5
+28,20,Female,Singapore,4.4,5.9,6,3,7
+29,24,Male,Malaysia,2.2,7.4,8,0,3
+30,19,Female,Thailand,5.9,5.3,5,4,8
+31,21,Male,Vietnam,3.6,6.7,7,1,5
+32,20,Female,Philippines,4.8,5.7,6,3,7
+33,18,Male,Indonesia,5.4,5.4,5,4,8
+34,23,Female,Taiwan,2.6,7.2,8,1,4
+35,19,Male,Hong Kong,4.7,5.8,6,3,7
+36,20,Female,Turkey,5.6,5.5,5,4,8
+37,22,Male,Israel,3.1,6.8,7,1,5
+38,19,Female,UAE,6.2,5.1,5,4,9
+39,21,Male,Egypt,3.9,6.5,7,2,6
+40,20,Female,Morocco,4.5,5.8,6,3,7
+41,24,Male,South Africa,2.3,7.3,8,1,4
+42,19,Female,Nigeria,5.8,5.4,5,4,8
+43,21,Male,Kenya,3.7,6.6,7,2,5
+44,20,Female,Ghana,4.6,5.7,6,3,7
+45,18,Male,Argentina,5.5,5.3,5,4,8
+46,23,Female,Chile,2.7,7.1,8,1,4
+47,19,Male,Colombia,4.8,5.9,6,3,7
+48,20,Female,Peru,5.5,5.6,5,4,8
+49,22,Male,Venezuela,3.3,6.7,7,2,5
+50,19,Female,Ecuador,6.3,5.2,5,4,9
+51,21,Male,Uruguay,3.8,6.4,7,2,6
+52,20,Female,Paraguay,4.7,5.8,6,3,7
+53,24,Male,Bolivia,2.4,7.2,8,1,4
+54,19,Female,Costa Rica,5.7,5.5,5,4,8
+55,21,Male,Panama,3.6,6.5,7,2,5
+56,20,Female,Jamaica,4.9,5.6,6,3,7
+57,18,Male,Trinidad,5.6,5.2,5,4,8
+58,23,Female,Bahamas,2.8,7.0,8,1,4
+59,19,Male,Iceland,4.6,5.9,6,3,7
+60,20,Female,Finland,5.4,5.7,5,4,8
+61,22,Male,Poland,3.1,7.1,7,1,5
+62,19,Female,Romania,5.6,5.6,5,3,8
+63,20,Male,Hungary,4.2,6.0,6,3,7
+64,18,Female,Czech Republic,6.1,5.2,4,4,9
+65,23,Male,Slovakia,2.3,7.4,8,1,3
+66,21,Female,Croatia,4.8,5.8,6,3,7
+67,20,Male,Serbia,3.9,6.5,7,2,6
+68,19,Female,Slovenia,5.7,5.4,5,4,8
+69,22,Male,Bulgaria,2.8,7.2,8,1,4
+70,20,Female,Estonia,4.5,5.9,6,3,7
+71,18,Male,Latvia,5.4,5.5,5,4,8
+72,21,Female,Lithuania,3.2,6.8,7,2,5
+73,19,Male,Ukraine,4.9,5.7,6,3,7
+74,20,Female,Moldova,5.8,5.3,5,4,8
+75,23,Male,Belarus,2.5,7.3,8,1,4
+76,21,Female,Kazakhstan,4.6,5.8,6,3,7
+77,19,Male,Uzbekistan,5.5,5.4,5,4,8
+78,22,Female,Kyrgyzstan,2.9,7.0,7,2,5
+79,20,Male,Tajikistan,4.7,5.9,6,3,7
+80,18,Female,Armenia,5.9,5.2,5,4,9
+81,21,Male,Georgia,3.0,7.1,8
+82,19,Female,Azerbaijan,4.8,5.7
+83,20,Male,Cyprus,3.8,6.6,7
+84,22,Female,Malta,2.7,7.2,8
+85,18,Male,Luxembourg,5.6,5.3,5
+86,21,Female,Monaco,4.5,5.8,6
+87,19,Male,Andorra,5.3,5.5,5
+88,23,Female,San Mari2.6,7.3,8
+89,20,Male,Vatican City,4.4,6.0,6
+90,18,Female,Liechtenstein,5.8,5.2,5
+91,22,Male,Montenegro,2.9,7.0,7
+92,19,Female,Albania,4.7,5.8
+93,21,Male,North Macedonia,3.7,6.5
+94,20,Female,Kosovo,5.5,5.4,5
+95,23,Male,Bosnia,2.4,7.4,8
+96,19,Female,Qatar,4.9,5.7,6
+97,18,Male,Kuwait,5.7,5.3,5
+98,22,Female,Bahrain,2.8,7.1
+99,20,Male,Oman,4.6,5.9

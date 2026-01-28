@@ -1,71 +1,29 @@
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
+import java.util.Map;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    // create a hashmap to store platform popularity
+    private static HashMap<String, Integer> platformPopularity = new HashMap<>();
 
-        ArrayList<ScreentimeDataInfo> screentimes = new ArrayList<>();
+    public static void main(String[] args) {
+        ReadCSV reader = new ReadCSV("StudentsSocialMediaAddiction.csv");
+        HashMap<String, ScreentimeDataInfo> dataMap = reader.data_CSV();
+        ScreentimeDataInfo maxPerson = dataMap.get(1);
 
-        ReadCSV csv = new ReadCSV("Students Social Media Addiction.csv");
-
-        // ArrayList counting way
-        countryCounts(screentimes);
-
-        // HashMap counting way
-        countryCountsHashMap(screentimes);
-    }
-
-    // display counts of students per country
-    // need 2 "parallel" arraylists. one for countries, one for counts
-    public static void countryCounts(ArrayList<ScreentimeDataInfo> students) {
-        System.out.println("Array List way: ");
-
-        ArrayList<String> countries = new ArrayList<>();
-        ArrayList<Integer> numStudents = new ArrayList<>();
-
-        for (int i = 0; i < students.size(); i++) {
-
-            ScreentimeDataInfo student = students.get(i);
-
-            if (countries.contains(student.country)) {
-                System.out.println("Country: " + student.country);
-                int index = countries.indexOf(student.country);
-                int count = numStudents.get(index) + 1;
-                numStudents.set(index, count);
-            } else {
-                countries.add(student.country);
-                numStudents.add(1);
+        for (int i = 0; i < ReadCSV.maxID; i++){
+            ScreentimeDataInfo person = dataMap.get(String.valueOf(i));
+            if (person != null) {
+                if (person.num_hours_screen > maxPerson.num_hours_screen){
+                    maxPerson = dataMap.get(String.valueOf(i));
+                }
             }
         }
-
-        for (int i = 0; i < countries.size(); i++) {
-            String country = countries.get(i);
-            int count = numStudents.get(i);
-            System.out.println("Country " + country + " count: " + count);
-        }
-    }
-
-    // hashmap combines the two parallel array(lists) already
-    public static void countryCountsHashMap(ArrayList<ScreentimeDataInfo> students) {
-        System.out.println("Hashmap way:");
-
-        HashMap<String, Integer> countryCounts = new HashMap<>();
-
-        for (int i = 0; i < students.size(); i++) {
-
-            ScreentimeDataInfo student = students.get(i);
-
-            if (countryCounts.containsKey(student.country)) {
-                int count = countryCounts.get(student.country) + 1;
-                countryCounts.put(student.country, count);
-            } else {
-                countryCounts.put(student.country, 1);
-            }
-        }
-
-        for (String country : countryCounts.keySet()) {
-            int count = countryCounts.get(country);
-            System.out.println("Country " + country + " count: " + count);
-        }
-    }
+        System.out.println("Screen time data for person:");
+        System.out.println("Screen Time: " + String.valueOf(maxPerson.getScreenTime()));
+        System.out.println("Gender: " + maxPerson.getGender());
+        System.out.println("Age: " + String.valueOf(maxPerson.getAge()));
+        System.out.println("Country: " + maxPerson.getCountry());
+        System.out.println("No data found for person.");
+   }
 }
